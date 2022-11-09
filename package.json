@@ -1,0 +1,9 @@
+{
+  "name": "fundamentos_nodejs",
+  "version": "1.0.0",
+  "description": "Estudando os fundamentos do NodeJS (curso da Rocketseat)",
+  "main": "index.js",
+  "author": "Eduardo Ernesto Corrales Reyna",
+  "license": "MIT",
+  "private": false
+}
