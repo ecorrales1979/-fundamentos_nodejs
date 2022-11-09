@@ -5,5 +5,8 @@
   "main": "index.js",
   "author": "Eduardo Ernesto Corrales Reyna",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
