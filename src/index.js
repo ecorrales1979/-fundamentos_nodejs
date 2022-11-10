@@ -17,6 +17,8 @@ const coursesList = [
   },
 ];
 
+app.use(express.json());
+
 app.get("/", function (request, response) {
   return response.send("Tudo OK!");
 });
@@ -39,6 +41,17 @@ app.get("/courses/:id", (request, response) => {
   const course = coursesList.find((item) => item.id === parseInt(id));
 
   return response.json(course);
+});
+
+app.post("/courses", (request, response) => {
+  const { name } = request.body;
+
+  const lastItem = coursesList.slice(-1)[0];
+  const id = !!lastItem ? lastItem.id + 1 : 1;
+
+  coursesList.push({ id, name });
+
+  return response.json(coursesList);
 });
 
 app.listen(3333);
