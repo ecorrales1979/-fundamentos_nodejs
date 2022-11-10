@@ -33,4 +33,12 @@ app.get("/courses", (request, response) => {
   return response.json(courses);
 });
 
+app.get("/courses/:id", (request, response) => {
+  const { id } = request.params;
+
+  const course = coursesList.find((item) => item.id === parseInt(id));
+
+  return response.json(course);
+});
+
 app.listen(3333);
