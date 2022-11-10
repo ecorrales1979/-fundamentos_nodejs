@@ -54,4 +54,18 @@ app.post("/courses", (request, response) => {
   return response.json(coursesList);
 });
 
+app.put("/courses/:id", (request, response) => {
+  const { id } = request.params;
+
+  const { name } = request.body;
+
+  coursesList.forEach((item) => {
+    if (item.id === parseInt(id)) {
+      item.name = name;
+    }
+  });
+
+  return response.json(coursesList);
+});
+
 app.listen(3333);
